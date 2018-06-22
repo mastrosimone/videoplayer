@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Video Player</title>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+     <meta name="viewport" content="width=device-width">
+</head>
+
+<body onload="">
+        <!-- <body onload="Player.getFirstAction()"> -->
+    <header class="Header">
+    </header>
+
+    <div class="index">
+            <div class="filelist" id="filelist"><span id="close_list" class="close_list">&times;</span>
+            <div id="create_list" class="create_list">
+                <div id="create_list_1" class="create_list_1"></div>
+                <div id="create_list_2" class="create_list_2"></div>
+                <div id="create_list_3" class="create_list_3"></div>
+            </div></div>
+            <div id="video_title" class="videotitle"></div>
+            <video onmouseenter="Player.getVideoIn()" onmouseleave="Player.getVideoOut()" id="video" preload="auto" width="100%" controlsList="nodownload" onloadstart="this.volume=0.0">
+                <source id="source" type="video/mp4" src="video/SampleVideo_1280x720_30mb.mp4">
+                        Your browser does not support the <code>video</code> element.
+                 </video>
+                <div id="button_div" class="button_div">
+                <div id="seekbar"><span></span></div>
+                <button id="devbutton" class="devbutton">Dev</button>
+                <button id="list" class="list"><i class="fas fa-bars"></i></button>
+                <button id="shuffle" class="shuffle"><i class="fas fa-random"></i></button>
+                <button id="previous" class="previous"><i class="fas fa-fast-backward"></i></button>
+                <button id="play" class="play"><i id="playicon" class="fa fa-play"></i></button>
+                <button id="next" class="next"><i class="fas fa-fast-forward"></i></button>
+                <button id="barenable" class="barenable">Control Disable</button>
+                <button id="download" class="download"><i class="fa fa-download"></i></button>
+                <button id="up" class="up"><i class="fa fa-volume-up"></i></button>
+                <button id="down" class="down"><i class="fa fa-volume-down"></i></button><br>
+                <form id="playerurl">
+                <input id="url" type="text" name="text" placeholder="Put in your url">
+                <button type="button" id="open" class="open">Open url</button>
+                <button type="button" id="queue" class="queue">Add to queue</button>
+                </form>
+        </div>
+        <div id="video_thumb_div"><img id='video_thumb' src=''></img></div>
+        <div id="video_title2"></div>
+        <div id="video_subtitle"></div>
+        <div id="video_description"></div>
+    <script src="main.js"></script>
+</body>
+
+</html>
