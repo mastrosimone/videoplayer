@@ -1,12 +1,10 @@
-var presrc = [] //dichiara la variabile esterna per il pulsante previous
-var shuffleplay = false
-var playstatus = false
+var presrc = [] //require for Previous()
+var shuffleplay = false //require for Shuffle()
+var playstatus = false //require for PlayBottonTransform()
 var next = false
 var devmode = false
 var current = 0
 var selection = ''
-var deviftrue = 'if (devmode == true) { console.log(document) }'
-var deviffalse = 'if (devmode == false) { console.log(code) }'
 
 for(x = 0;x < api.data.length;x++)
 
