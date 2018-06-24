@@ -28,7 +28,37 @@ form#playerurl {
 video#video {
     position:relative;
     z-index:0;
+    width: 75%;
+    float: left;
   }
+
+div.sidebar {
+    width: 25%;
+    float: left;
+    overflow: overlay;
+    height: 540px;
+}
+
+.div_sidebar_single {
+    cursor: pointer;
+    border-bottom: solid 1px #6f6f6f;
+    height: 67px;
+}
+
+.div_sidebar_img {
+    width: 100px;
+}
+
+img.img_100px {
+    width: 100px;
+    float: left;
+}
+
+.div_sidebar_title {
+    float: left;
+    width: 200px;
+    margin: 20px 0px 0 10px;
+}
   
 #video_title {
     position: fixed;
@@ -39,7 +69,7 @@ video#video {
     z-index: 5;
     height: 45px;
     font-size: 25px;
-    width: 100%;
+    width: 74%;
     margin-top: 20px;
     padding-top: 10px;
     background-color: #35353587;

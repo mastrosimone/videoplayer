@@ -20,7 +20,7 @@ var Player = (function(api) {
         if (current == 0){
             return List9()
         }
-        return Random(), Play()
+        return Random(), Play(), Sidebar()
 
     }
 
@@ -36,7 +36,7 @@ var Player = (function(api) {
                 console.log('Playstatus: Preaction', playstatus)
             }
             playstatus = true
-            return video.load(), video.play(), PlayBottonTransform(), ViewData()
+            return video.load(), video.play(), PlayBottonTransform(), ViewData(), Sidebar()
         }
         if (playstatus == true){
             playstatus = false
@@ -110,7 +110,7 @@ var Player = (function(api) {
         console.log('Video out!')
         }
         var titleoonvideo = document.getElementById('video_title');
-        setTimeout(DisplayNone, 3000)
+        setTimeout(DisplayNone, 5000)
         function DisplayNone(){
         titleoonvideo.style.display = 'none'
         }
@@ -238,6 +238,44 @@ var Player = (function(api) {
             var title = api.data[x].title
             divtitle.textContent = title
             divgen.appendChild(divtitle)
+        }
+    }
+
+    function Sidebar() {
+        
+        var filelist = document.getElementById('sidebar')
+        filelist.innerHTML = ''
+        for(x = 0;x < api.data.length;x++){
+            if (x <= 12) {
+                var divgen = document.createElement("div")
+                divgen.setAttribute('class', 'div_sidebar_single')
+                divgen.setAttribute('href', api.data[x].sources)
+                filelist.appendChild(divgen)
+                
+                var divimg = document.createElement("div")
+                divimg.setAttribute('class', 'div_sidebar_img')
+                divgen.appendChild(divimg)
+
+                var img = document.createElement('img')
+                img.setAttribute('class', 'img_100px')
+                img.setAttribute('src', api.data[x].thumb)
+                img.setAttribute('href', api.data[x].sources)
+                divimg.appendChild(img)
+
+                var divtitle = document.createElement("div")
+                divtitle.setAttribute('class', 'div_sidebar_title')
+                divtitle.textContent = api.data[x].title
+                divtitle.setAttribute('href', api.data[x].sources)
+                divgen.appendChild(divtitle)
+
+                divgen.addEventListener('click', function(e){
+                    var source = document.getElementById('source')
+                    source.setAttribute('src', e.target.getAttribute('href'))
+                    video.load(), video.play()
+                })
+            } else {
+                break
+            }
         }
     }
 
